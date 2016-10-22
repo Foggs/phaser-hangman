@@ -1,0 +1,32 @@
+{
+    "background":{"src": "game_bckgrd.png", "x":0, "y":0 },
+
+    "letters": [
+        {"src": "letter_A.png", "x":0, "y":0 },
+        {"src": "letter_B.png", "x": 774, "y": 516},
+        {"src": "letter_C.png", "x": 774, "y": 258},
+        {"src": "letter_D.png", "x": 774, "y": 0},
+        {"src": "letter_E.png", "x": 516, "y": 1548},
+        {"src": "letter_F.png", "x": 516, "y": 1290},
+        {"src": "letter_G.png", "x": 516, "y": 1032},
+        {"src": "letter_H.png", "x": 516, "y": 774},
+        {"src": "letter_I.png", "x": 516, "y": 516},
+        {"src": "letter_J.png", "x": 516, "y": 258},
+        {"src": "letter_K.png", "x": 516, "y": 0},
+        {"src": "letter_L.png", "x": 774, "y": 1290},
+        {"src": "letter_M.png", "x": 258, "y": 1290},
+        {"src": "letter_N.png", "x": 258, "y": 1032},
+        {"src": "letter_O.png", "x": 258, "y": 774},
+        {"src": "letter_P.png", "x": 258, "y": 516},
+        {"src": "letter_Q.png", "x": 258, "y": 258},
+        {"src": "letter_R.png", "x": 258, "y": 0},
+        {"src": "letter_S.png", "x": 0,  "y": 1548},
+        {"src": "letter_T.png", "x": 0,  "y": 1290},
+        {"src": "letter_U.png", "x": 0,  "y": 1032},
+        {"src": "letter_V.png", "x": 0,  "y": 774},
+        {"src": "letter_W.png", "x": 0,  "y": 516},
+        {"src": "letter_X.png", "x": 0,  "y": 258},
+        {"src": "letter_Y.png", "x": 0,  "y": 0},
+        {"src": "letter_Z.png", "x": 258, "y": 1548}
+    ]
+}
