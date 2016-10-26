@@ -1,1 +1,21 @@
-# phaser-hangman
+# Phaser + ES6 + Webpack.
+#### A bootstrap project to create games with Phaser + ES6 + Webpack.
+
+
+Application was built using PhaserJs game Development framework, Javascript ES6 compiled to ES5 by Babel through Webpack which bundles, optimizes, minifies files for production. Files in the dist directory.
+
+Development files have been commented throughout.
+Much of the config options are in the data>level.json file which is accessed throughout the application for common config setings
+
+
+## Run the development server:
+
+Run:
+
+```npm run dev```
+
+This will run a server so you can run the game in a browser.
+
+Open your browser and enter localhost:3000 into the address bar.
+
+

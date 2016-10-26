@@ -2,31 +2,95 @@
     "background":{"src": "game_bckgrd.png", "x":0, "y":0 },
 
     "letters": [
-        {"src": "letter_A.png", "x":0, "y":0 },
-        {"src": "letter_B.png", "x": 774, "y": 516},
-        {"src": "letter_C.png", "x": 774, "y": 258},
-        {"src": "letter_D.png", "x": 774, "y": 0},
-        {"src": "letter_E.png", "x": 516, "y": 1548},
-        {"src": "letter_F.png", "x": 516, "y": 1290},
-        {"src": "letter_G.png", "x": 516, "y": 1032},
-        {"src": "letter_H.png", "x": 516, "y": 774},
-        {"src": "letter_I.png", "x": 516, "y": 516},
-        {"src": "letter_J.png", "x": 516, "y": 258},
-        {"src": "letter_K.png", "x": 516, "y": 0},
-        {"src": "letter_L.png", "x": 774, "y": 1290},
-        {"src": "letter_M.png", "x": 258, "y": 1290},
-        {"src": "letter_N.png", "x": 258, "y": 1032},
-        {"src": "letter_O.png", "x": 258, "y": 774},
-        {"src": "letter_P.png", "x": 258, "y": 516},
-        {"src": "letter_Q.png", "x": 258, "y": 258},
-        {"src": "letter_R.png", "x": 258, "y": 0},
-        {"src": "letter_S.png", "x": 0,  "y": 1548},
-        {"src": "letter_T.png", "x": 0,  "y": 1290},
-        {"src": "letter_U.png", "x": 0,  "y": 1032},
-        {"src": "letter_V.png", "x": 0,  "y": 774},
-        {"src": "letter_W.png", "x": 0,  "y": 516},
-        {"src": "letter_X.png", "x": 0,  "y": 258},
-        {"src": "letter_Y.png", "x": 0,  "y": 0},
-        {"src": "letter_Z.png", "x": 258, "y": 1548}
-    ]
+        {"src": "A", "x":0, "y":0 },
+        {"src": "B", "x": 774, "y": 516},
+        {"src": "C", "x": 774, "y": 258},
+        {"src": "D", "x": 774, "y": 0},
+        {"src": "E", "x": 516, "y": 1548},
+        {"src": "F", "x": 516, "y": 1290},
+        {"src": "G", "x": 516, "y": 1032},
+        {"src": "H", "x": 516, "y": 774},
+        {"src": "I", "x": 516, "y": 516},
+        {"src": "J", "x": 516, "y": 258},
+        {"src": "K", "x": 516, "y": 0},
+        {"src": "L", "x": 774, "y": 1290},
+        {"src": "M", "x": 258, "y": 1290},
+        {"src": "N", "x": 258, "y": 1032},
+        {"src": "O", "x": 258, "y": 774},
+        {"src": "P", "x": 258, "y": 516},
+        {"src": "Q", "x": 258, "y": 258},
+        {"src": "R", "x": 258, "y": 0},
+        {"src": "S", "x": 0,  "y": 1548},
+        {"src": "T", "x": 0,  "y": 1290},
+        {"src": "U", "x": 0,  "y": 1032},
+        {"src": "V", "x": 0,  "y": 774},
+        {"src": "W", "x": 0,  "y": 516},
+        {"src": "X", "x": 0,  "y": 258},
+        {"src": "Y", "x": 0,  "y": 0},
+        {"src": "Z", "x": 258, "y": 1548}
+    ],
+
+    "hangman":[
+        {"src":"gallows", "x":128, "y":0 , "name":"gallows","angle":0, "visible":true},
+        {"src":"head", "x":267, "y":50 , "name":"head", "angle":0, "visible":false},
+        {"src":"body", "x":268, "y":140, "name":"body", "angle":0, "visible":false},
+        {"src":"body", "x":240, "y":170, "name":"leftarm","angle":60, "visible":false},
+        {"src":"body", "x":290, "y":170, "name":"rightarm","angle":-60, "visible":false},
+        {"src":"body", "x":250, "y":280, "name":"leftleg", "angle":30, "visible":false},
+        {"src":"body", "x":290, "y":280, "name":"rightleg","angle":-30, "visible":false}
+    ],
+    "bodyParts":["rightleg","leftleg","leftarm","rightarm","body","head"],
+
+    "styles": {
+        "errorConfig": {
+          "font" : "Nunito",
+          "fontSize" : 16,
+          "fill" : "#d9534f"
+        },
+        "wordEntryConfig": {
+          "font": "18px Nunito",
+          "fill": "#212121",
+          "fontWeight": "bold",
+          "width": 150,
+          "height":25,
+          "padding": 8,
+          "borderWidth": 1,
+          "borderColor": "#000",
+          "borderRadius": 6,
+          "placeHolder": "Enter a word...",
+          "type": "Fabrique.InputType.text"
+        },
+        "banner": {
+          "font" : "Nunito",
+          "fontSize" : 40,
+          "fill" : "#77BFA3"
+        },
+        "guessesConfig" : {
+          "font" : "Nunito",
+          "fontSize" : 18,
+          "fill" : "#212121",
+          "backgroundColor": "#fff"
+        },
+        "labels": {
+          "font" : "Nunito",
+          "fontSize" : 18,
+          "fill" : "#77BFA3"
+        },
+        "guessesLeftConfig": {
+          "font" : "Nunito",
+          "fontSize" : 30,
+          "align": "center",
+          "fill" : "#77BFA3"
+        },
+        "guessEntryConfig": {
+          "font": "24px Nunito",
+          "fill": "#212121",
+          "fontWeight": "bold",
+          "width": 50,
+          "height":40,
+          "borderRadius": 4,
+          "textAlign": "center",
+          "max":1
+        }
+    }
 }
