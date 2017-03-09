@@ -11,7 +11,7 @@ export default class extends Phaser.State {
   create () {
     // reuse tile animation from SplashState
     this.game.animate(this.data);
-    
+
     let banner = this.add.text(20,20, 'Hangman Game',this.data.styles.banner);
 
     this.message = this.add.text(20,20, this.game.message, this.data.styles.guessesLeftConfig);
@@ -55,6 +55,10 @@ export default class extends Phaser.State {
     rect.addChild(this.message);
     rect.getChildAt(1).x = rect.width/2;
     rect.getChildAt(1).y = rect.height/2;
+
+    rect.addChild(this.replay);
+    rect.getChildAt(1).x = 250;
+    rect.getChildAt(1).y = 10;
   }
 
   replayGame () {

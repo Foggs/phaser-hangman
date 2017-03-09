@@ -7,6 +7,13 @@ Application was built using PhaserJs game Development framework, Javascript ES6 
 Development files have been commented throughout.
 Much of the config options are in the data>level.json file which is accessed throughout the application for common config setings
 
+## Install the app dependencies:
+
+Run:
+
+```npm install```
+
+This will install all of the app dependencies.
 
 ## Run the development server:
 
@@ -14,8 +21,7 @@ Run:
 
 ```npm run dev```
 
-This will run a server so you can run the game in a browser.
-
-Open your browser and enter localhost:3000 into the address bar.
+This will compile tha app and start a server so you can run the game in a browser.
+Open a browser and enter localhost:3000 into the address bar.
 
 

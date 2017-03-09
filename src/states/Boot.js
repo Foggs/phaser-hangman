@@ -1,5 +1,5 @@
-import Phaser from 'phaser'
-import WebFont from 'webfontloader'
+import Phaser from 'phaser';
+import WebFont from 'webfontloader';
 
 export default class extends Phaser.State {
   init () {
@@ -25,7 +25,7 @@ export default class extends Phaser.State {
 
   create (){
       this.game.plugins.add(Fabrique.Plugins.InputField);
-       
+
        if(this.game.device.desktop)
        {
            // this.scale.pageAlignHorizontally = true;

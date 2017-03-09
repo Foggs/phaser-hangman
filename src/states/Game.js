@@ -29,16 +29,11 @@ export default class extends Phaser.State {
     this.buildLabels();
     this.drawGallows();
     this.buildGameBoard();
-
-   
-
   }
-
- 
 
   drawGallows() {
     let len = this.data.hangman.length,
-        i=0;   
+        i=0;
 
     for (i; i < len; i++) {
       let item = this.data.hangman[i];
@@ -46,9 +41,9 @@ export default class extends Phaser.State {
       this.gallows.getChildAt(i).anchor.setTo(0.5,0);
       this.gallows.getChildAt(i).angle = item.angle;
       this.gallows.getChildAt(i).visible = item.visible;
-      this.gallows.getChildAt(i).name = item.name;   
+      this.gallows.getChildAt(i).name = item.name;
     }
-   
+
     this.gallows.scale.set(.75,.75);
     this.gallows.x = (this.game.width-this.gallows.width)/2;
     this.gallows.y = 50;
@@ -57,9 +52,9 @@ export default class extends Phaser.State {
 
   buildLabels() {
     let styles = this.data.styles;
-    this.guessesLeft_txt = this.add.text(20, this.world.centerY+30, 
+    this.guessesLeft_txt = this.add.text(20, this.world.centerY+30,
     'Guesses Left: ' + this.NUM_GUESSES, styles.guessesLeftConfig);
-    
+
     let txt_1 = this.add.text(this.guessesLeft_txt.x, this.guessesLeft_txt.y+60, 'Enter a letter: ',styles.labels);
 
     this.error_txt = this.add.text(txt_1.x, txt_1.y+50,'Please enter a letter!',styles.errorConfig)
@@ -81,7 +76,7 @@ export default class extends Phaser.State {
         curr,
         i=0,
         len = letters.length;
-        
+
     for(i; i<len; i++) {
       if(i===0) {
         curr = this.add.sprite(0, 0, 'block');
@@ -106,24 +101,24 @@ export default class extends Phaser.State {
     if(validate(guess) === false) {
       this.error_txt.setText('Please enter a letter!');
       this.showErrors = true;
-      this.clearInput(); 
+      this.clearInput();
     } else {
       this.showErrors = false;
-    } 
-    
+    }
+
     // check to see if the letter has already been chosen, if not display ERROR
     if(_.contains(this.guesses, guess) === true) {
       this.error_txt.setText('You chose that letter already!');
       this.showErrors = true;
-      this.clearInput();  
-    } 
+      this.clearInput();
+    }
 
     // if the guess is valid and has not been tried already
     // check if the guess is in the mystery word
     if(this.showErrors === false) {
       this.guesses.push(guess);
       this.checkIfGuessIsCorrect(guess);
-    }    
+    }
   }
 
   checkIfGuessIsCorrect(guess){
@@ -142,13 +137,13 @@ export default class extends Phaser.State {
   revealCorrectGuess(guess) {
     _.filter(this.game.MYSTERY_WORD.split(''), function(letter,index) {
       if(letter === guess) {
-        // get a reference to the hidden letter       
+        // get a reference to the hidden letter
         let item = {
           sprite: this.container.getChildAt(index),
           x: this.container.getChildAt(index).x,
           y: this.container.getChildAt(index).y,
         }
-        // create the revealed letter, using hidden letters x,y 
+        // create the revealed letter, using hidden letters x,y
         let newitem = this.add.sprite(item.sprite.x, item.sprite.y, 'letters', guess);
         // replace the hidden letter with the revealed letter
         this.container.replace(item.sprite,newitem);
@@ -161,11 +156,11 @@ export default class extends Phaser.State {
   }
 
   wrongGuess(guess) {
-    // decrement the guesses left count and display on screen 
+    // decrement the guesses left count and display on screen
     this.NUM_GUESSES = this.NUM_GUESSES-1;
     // reveal a hangman body part, force it to a string > +''
     let part = this.data.bodyParts[this.NUM_GUESSES]+'';
-    this.gallows.getByName(part.trim()).visible = true;   
+    this.gallows.getByName(part.trim()).visible = true;
     if(this.NUM_GUESSES === 0) {
       // set message for game over state
       this.game.message = 'SORRY YOU\n LOSE!';
@@ -180,7 +175,7 @@ export default class extends Phaser.State {
   checkForWin(){
     // set ref to Mystery word to array
     let chars = [...this.game.MYSTERY_WORD];
-    // compare to MYSTERY_WORD_CHECK array if _.difference = 0 game is Won! 
+    // compare to MYSTERY_WORD_CHECK array if _.difference = 0 game is Won!
     if(_.difference(chars, this.MYSTERY_WORD_CHECK).length === 0){
       // set message for game over state
       this.game.message = 'YOU WIN!!!';
@@ -200,7 +195,7 @@ export default class extends Phaser.State {
 
   gameOver(){
     this.state.start('GameOver');
-  }  
+  }
 
   update () {
     if(this.showErrors === true) {
@@ -212,7 +207,7 @@ export default class extends Phaser.State {
    //  {
    //      alert('key');
    //  }
-        
+
   }
 
 

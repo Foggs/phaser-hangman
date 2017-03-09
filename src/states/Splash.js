@@ -14,7 +14,7 @@ export default class extends Phaser.State {
     this.game.message = '';
     this.game.MYSTERY_WORD = '';
     this.game.animate = this.animate;
-    
+
   }
 
   preload () {}
@@ -22,10 +22,10 @@ export default class extends Phaser.State {
   create () {
     // alert(SCALE_RATIO)
     let styles = this.data.styles;
-    
+
     this.animate(this.data);
-    this.drawBckgrd(); 
-    
+    this.drawBckgrd();
+
     let banner = this.add.text(this.center_x, this.center_y-60, 'Hangman Game',styles.banner);
     banner.anchor.setTo(0.5),
 
@@ -57,7 +57,7 @@ export default class extends Phaser.State {
     let letters = this.add.group();
         letters.enableBody = true;
         letters.physicsBodyType = Phaser.Physics.ARCADE;
-    
+
     let len = data.letters.length;
     for (let i = 0; i < len; i++) {
       let randomX = randomRange(0,this.width);
@@ -91,7 +91,7 @@ export default class extends Phaser.State {
   }
 
   update() {
-  
+
     // this.state.start('Game');
   }
 }
