@@ -36,7 +36,7 @@ export default class extends Phaser.State {
           // this.scale.foceLandscape = true;
           this.input.maxPointers = 1;
           this.input.addPointer();
-            // this.game.scale.pageAlignHorizontally = true;
+          // this.game.scale.pageAlignHorizontally = true;
             // this.game.scale.pageAlignVertically = true;
             // this.game.scale.refresh();
 

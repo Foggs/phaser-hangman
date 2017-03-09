@@ -1,12 +1,13 @@
-var path = require('path')
-var webpack = require('webpack')
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+var path = require('path');
+var webpack = require('webpack');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // Phaser webpack config
-var phaserModule = path.join(__dirname, '/node_modules/phaser/')
-var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
-var pixi = path.join(phaserModule, 'build/custom/pixi.js')
-var p2 = path.join(phaserModule, 'build/custom/p2.js')
+var phaserModule = path.join(__dirname, '/node_modules/phaser/');
+var phaser = path.join(phaserModule, 'build/custom/phaser-split.js');
+var pixi = path.join(phaserModule, 'build/custom/pixi.js');
+var p2 = path.join(phaserModule, 'build/custom/p2.js');
+var phaserInput = path.join(phaserModule, 'build/custom/p2.js')
 
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
@@ -19,6 +20,7 @@ module.exports = {
       path.resolve(__dirname, 'src/main.js')
     ]
   },
+
   devtool: 'source-map',
   output: {
     pathinfo: true,
@@ -39,6 +41,9 @@ module.exports = {
     })
   ],
   module: {
+    noParse: [
+      '/node_modules/phaser/build/custom/p2.js',
+    ],
     loaders: [
       { test: /\.js$/, loader: 'babel', include: path.join(__dirname, 'src') },
       { test: /pixi\.js/, loader: 'expose?PIXI' },

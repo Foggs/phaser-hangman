@@ -21,7 +21,8 @@ Run:
 
 ```npm run dev```
 
-This will compile tha app and start a server so you can run the game in a browser.
+This will compile the app and start a server so you can run the game in a browser.
 Open a browser and enter localhost:3000 into the address bar.
+Also starts a watch process, when source files are changed the app will recompile and refresh the broswer
 
 
